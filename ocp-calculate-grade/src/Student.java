@@ -18,6 +18,7 @@ public class Student {
 //    public Grade calculateGrade() {
 //        double totalScore = 0.35 * midScore + 0.35 * finalScore + 0.3 * hwScore;
 //
+//        조건문이 들어감 -> OCP 만족하지 않음
 //        if (totalScore >= 85.0) return Grade.A;
 //        if (totalScore >= 75.0) return Grade.B;
 //        if (totalScore >= 65.0) return Grade.C;
