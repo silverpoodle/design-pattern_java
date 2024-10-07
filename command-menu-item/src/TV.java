@@ -1,3 +1,4 @@
+// Receiver - 명령을 받음
 public class TV {
 
     private boolean isPowerOn = false;

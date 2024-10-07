@@ -1,3 +1,4 @@
+// Invoker - 명령을 내림
 public class MenuItem {
 
 //    private Paengsoo paengsoo;
