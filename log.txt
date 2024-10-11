@@ -1,1 +1,2 @@
-message:{owner: SUI, Withdraw: 3000}, timestamp: 2024-09-05T18:21:42.397832
+message:{owner: JUNGIN, Deposit: 5000}, timestamp: 2024-09-07T19:58:20.619884200
+message:{owner: SUI, Withdraw: 3000}, timestamp: 2024-09-07T19:58:20.624390900

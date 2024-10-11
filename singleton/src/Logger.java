@@ -13,6 +13,7 @@ public class Logger {
 
     private final String LOGFILE = "log.txt";
     private PrintWriter printWriter;
+    private static Logger instance = new Logger();
 
     public Logger() {
         FileWriter fw = null;
@@ -27,5 +28,10 @@ public class Logger {
     public void log(String message) {
         LocalDateTime dateTime = LocalDateTime.now();
         printWriter.println("message:" + message + ", timestamp: " + dateTime);
+    }
+
+    public static Logger getInstance() {
+        if (instance == null) instance = new Logger();
+        return instance;
     }
 }

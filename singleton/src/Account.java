@@ -7,7 +7,7 @@ public class Account {
     public Account(String owner, int balance) {
         this.owner = owner;
         this.balance = balance;
-        this.myLogger = new Logger();
+        this.myLogger = Logger.getInstance();
     }
 
     public int getBalance() {
@@ -27,4 +27,8 @@ public class Account {
         balance -= money;
         myLogger.log("{owner: " + owner + ", Withdraw: " + money+ "}");
     }
+
+//    public void setMyLogger(Logger logger) {
+//        this.myLogger = logger;
+//    }
 }
