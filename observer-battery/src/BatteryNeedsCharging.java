@@ -1,4 +1,4 @@
-public class BatteryNeedsCharging {
+public class BatteryNeedsCharging implements Observer{
     private static final int NEEDS_CHARGING = 10;
     private Battery battery;
     public BatteryNeedsCharging(Battery battery) {

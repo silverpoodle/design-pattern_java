@@ -1,4 +1,4 @@
-public class BatteryLevelDisplay {
+public class BatteryLevelDisplay implements Observer{
     private Battery battery;
     public BatteryLevelDisplay(Battery battery) {
         this.battery = battery;

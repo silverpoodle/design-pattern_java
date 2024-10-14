@@ -1,4 +1,4 @@
-public class LowBatteryWarning {
+public class LowBatteryWarning implements Observer{
     private static final int LOW_BATTERY = 30;
     private Battery battery;
     public LowBatteryWarning(Battery battery) {
