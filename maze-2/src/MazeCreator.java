@@ -9,6 +9,8 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
  * 2. GoF Factory Method
  * 3. Abstract Factory Pattern
  */
+
+// a1-a2 비밀번호, a3 폭탄, a5-a6 비밀번호
 public class MazeCreator {
     public  Maze createMaze() {
         Maze maze = makeMaze();
