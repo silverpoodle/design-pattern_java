@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.time.Instant;
 
 // MazeMap 추상 클래스
@@ -281,9 +282,9 @@ class GamePanel extends JPanel {
     private final int tileSize = 20;
     private final Instant startTime;
 
-    public GamePanel(MazeMap map, Player player) {
-        this.map = map.makeMaze();
-        this.player = player.makePlayer();
+    public GamePanel(MazeAndPlayerFactory factory) {
+        this.map = factory.makeMaze();
+        this.player = factory.makePlayer();
 //        this.map = new TrappedMazeMap();
 //        this.player = new BasicPlayer();
 
@@ -300,7 +301,7 @@ class GamePanel extends JPanel {
                     case KeyEvent.VK_RIGHT -> player.moveRight(map);
                 }
                 if (player.reachedGoal(map)) {
-                    long elapsedTime = java.time.Duration.between(startTime, Instant.now()).toSeconds();
+                    long elapsedTime = Duration.between(startTime, Instant.now()).toSeconds();
                     JOptionPane.showMessageDialog(GamePanel.this, "You reached the goal in " + elapsedTime + " seconds!");
                 }
                 repaint();
@@ -313,6 +314,7 @@ class GamePanel extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+        //strategy & GoF
         for (int row = 0; row < map.getMap().length; row++) {
             for (int col = 0; col < map.getMap()[0].length; col++) {
                 if (map.getMap()[row][col] == 1) {
@@ -339,7 +341,8 @@ public class GameWithMaze extends JFrame {
         setTitle("Maze Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        add(new GamePanel(new TrappedMazeMap(), new BasicPlayer()));
+        add(new GamePanel(new MazeAndPlayerFactory() {
+        }));
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
