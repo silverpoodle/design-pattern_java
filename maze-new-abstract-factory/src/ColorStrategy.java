@@ -1,3 +1,7 @@
+import java.awt.*;
+
 public interface ColorStrategy {
-    public ColorStrategy colorSetter();
+    Color getWallColor();
+    Color getTrapColor();
+    Color getGoalColor();
 }
