@@ -54,15 +54,15 @@ class GamePanel extends JPanel {
         for (int row = 0; row < map.getMap().length; row++) {
             for (int col = 0; col < map.getMap()[0].length; col++) {
                 switch (map.getMap()[row][col]) {
-                    case 1 -> { // Wall
+                    case 1 -> {
                         g.setColor(colorStrategy.getWallColor());
                         g.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
                     }
-                    case 2 -> { // Goal
+                    case 2 -> {
                         g.setColor(colorStrategy.getGoalColor());
                         g.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
                     }
-                    case 3 -> { // Trap
+                    case 3 -> {
                         g.setColor(colorStrategy.getTrapColor());
                         g.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
                     }
