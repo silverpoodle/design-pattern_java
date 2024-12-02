@@ -1,7 +1,9 @@
 import java.awt.*;
 
-public interface ColorStrategy {
-    Color getWallColor();
-    Color getTrapColor();
-    Color getGoalColor();
+abstract class ColorStrategy {
+//    abstract Color getWallColor();
+//    abstract Color getTrapColor();
+//    abstract Color getGoalColor();
+
+    abstract void render(Graphics g, MazeMap m, int tileSize, Player p);
 }

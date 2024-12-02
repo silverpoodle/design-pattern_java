@@ -14,12 +14,12 @@ class GamePanel extends JPanel {
     private ColorStrategy colorStrategy;
 
 
-    public GamePanel(MazeAndPlayerFactory factory) {
+    public GamePanel(MazeAndPlayerFactory factory, ColorStrategy colorStrategy) {
         this.map = factory.makeMaze();
         this.player = factory.makePlayer();
-        this.colorStrategy = new DefaultColorStrategy();
 //        this.map = new TrappedMazeMap();
 //        this.player = new BasicPlayer();
+        this.colorStrategy = colorStrategy;
 
         this.startTime = Instant.now(); // 시작 시간 기록
         setPreferredSize(new Dimension(tileSize * map.getMap()[0].length, tileSize * map.getMap().length));
@@ -43,34 +43,11 @@ class GamePanel extends JPanel {
         setFocusable(true);
     }
 
-    public void setColorStrategy(ColorStrategy colorStrategy) {
-        this.colorStrategy = colorStrategy;
-    }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        colorStrategy.render(g,map,tileSize,player);
 
-        for (int row = 0; row < map.getMap().length; row++) {
-            for (int col = 0; col < map.getMap()[0].length; col++) {
-                switch (map.getMap()[row][col]) {
-                    case 1 -> {
-                        g.setColor(colorStrategy.getWallColor());
-                        g.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
-                    }
-                    case 2 -> {
-                        g.setColor(colorStrategy.getGoalColor());
-                        g.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
-                    }
-                    case 3 -> {
-                        g.setColor(colorStrategy.getTrapColor());
-                        g.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
-                    }
-                }
-            }
-        }
-
-        g.setColor(Color.BLUE);
-        g.fillOval(player.getX() * tileSize, player.getY() * tileSize, tileSize, tileSize);
     }
 }

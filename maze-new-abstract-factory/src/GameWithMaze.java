@@ -12,7 +12,7 @@ public class GameWithMaze extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         add(new GamePanel(new MazeAndPlayerFactory() {
-        }));
+        }, new DefaultColorStrategy()));
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
