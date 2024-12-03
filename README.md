@@ -168,3 +168,11 @@ public class DemandHolderSingleton {
 > **Observer** = Subject의 변경을 통보받는 객체들의 인터페이스  <br/>
 > **ConcreteSubject** =  Subject 인터페이스를 구현하는 구체적인 클래스 <br/>
 > **ConcreteObserver** = Observer 인터페이스를 구현하는 구체적인 클래스
+
+<br/>
+
+### 4. Decorator
+
+`동일한 클래스의 다른 객체의 동작에 영향을 주지 않고, 개별 객체에 동적으로 동작을 추가할 수 있는 구조적 디자인 패턴`
+
+- 
