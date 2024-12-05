@@ -26,7 +26,7 @@
     4-4. 투썸 기프트카드 (카드 리더기, 바코드)<br/>
     4-5. 투썸하트 어플 (바코드) <br/>
     4-6. CJ 임직원 할인 (카드 리더기) <br/>
-    4-7. 제휴카드 (카드 리더기)<br/>
+    4-7. 제휴카드 (카드 리더기)<br/><br/>
 
 5. 메뉴 품철 처리<br/>
     5-1. 특정 메뉴들은 사전에 **수량 입력** 가능, 0개 시 **자동** 품절 처리<br/>
@@ -42,7 +42,7 @@
    7-2. 메뉴 UI: **6 x 5 격자**로 구성, 위치 변경 가능<br/>
    7-3. 매니저 권한 필요
 
-<img src="https://github.com/silverpoodle/typora-images/blob/main/pos.jpg?raw=true" alt="image" style="zoom:40%;" />
+<img src="https://github.com/silverpoodle/typora-images/blob/main/pos.jpg?raw=true" alt="image" style="zoom:35%;" />
 
 <br/>
 
