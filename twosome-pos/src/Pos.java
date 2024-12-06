@@ -5,54 +5,24 @@ public class Pos {
     int cashTotal = 0;
     int qrTotal = 0;
     int total = 0;
+    DiscountStrategy discountStrategy;
 
     public Pos(int postNo, boolean isPos) {
         this.postNo = postNo;
         this.isPos = isPos;
     }
 
+    public void setDiscountStrategy(DiscountStrategy discountStrategy) {
+        this.discountStrategy = discountStrategy;
+    }
+
     public int getTotal() {
         return total;
     }
 
-    public void calculate(Menu menu, Discount discount, Pay pay) {
+    public int calculateDiscount(Menu menu, DiscountStrategy discountStrategy, Integer percent, Integer amount) {
 
-        int profit = 0;
-
-        if(menu.isSoldOut) {
-            System.out.println("품절처리된 메뉴입니다.");
-            return;
-        }
-
-        if(discount == null) {
-            profit += menu.getPrice();
-        }
-        else if (discount.getName().equals("SKT 우주패스")) {
-            profit += (int) (menu.getPrice() * 0.7);
-        }
-        else if (discount.getName().equals("CJ 임직원 할인")) {
-            profit += (int) (menu.getPrice() * 0.7);
-        }
-        else if (discount.getName().equals("퍼센트 할인")) {
-            profit += (int) (menu.getPrice() * discount.getPercent());
-        }
-        else if (discount.getName().equals("금액 할인")) {
-            profit += (menu.getPrice() - discount.getAmount());
-        }
-
-        if (pay.payMethod == PayMethod.CARD) {
-            cardTotal += profit;
-        }
-
-        if (pay.payMethod == PayMethod.CASH) {
-            cashTotal += profit;
-        }
-
-        if (pay.payMethod == PayMethod.QR) {
-            qrTotal += profit;
-        }
-
-        total += profit;
+        return  discountStrategy.discount(menu.getPrice(), percent, amount);
 
     }
 
