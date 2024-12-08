@@ -156,7 +156,7 @@ public class DemandHolderSingleton {
 <br/>
 
 ### 3. Observer
-<img src="https://github.com/silverpoodle/typora-images/blob/main/observer.png?raw=true" alt="image" style="zoom:60%;" />
+<img src="https://github.com/silverpoodle/typora-images/blob/main/observer.png?raw=true" alt="image" style="zoom:80%;" />
 
 `일대다(one-to-many) 의존 관계를 정의하여, 어떤 객체의 상태가 변할 때 그와 연관된 객체 들에게 알림을 보내는 디자인 패턴`
 

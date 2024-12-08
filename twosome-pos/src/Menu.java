@@ -1,21 +1,26 @@
 import java.util.List;
 
-public class Menu {
+public class Menu extends MenuSubject{
 
     String name;
     Size size;
     int price;
     Category category;
+    volatile boolean isSoldOut = false;
 
-    public void setToSoldOut() {
-        isSoldOut = true;
+    public synchronized void setToSoldOut() {
+        synchronized (MUTEX) {
+            this.isSoldOut = true;
+            notifyObservers(this, isSoldOut);
+        }
     }
 
-    public void setToStored() {
-        isSoldOut = false;
+    public synchronized void setToStored() {
+        synchronized (MUTEX) {
+            this.isSoldOut = false;
+            notifyObservers(this, isSoldOut);
+        }
     }
-
-    boolean isSoldOut = false;
 
     public Menu(String name, Size size, int price, Category category) {
         this.name = name;
