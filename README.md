@@ -124,7 +124,7 @@ public class DemandHolderSingleton {
 ## Behavioral Pattern
 
 ### 1. Strategy
-<img src="https://github.com/silverpoodle/typora-images/blob/main/image.png?raw=true" alt="image-20240218203439687" style="zoom:50%;" />
+<img src="https://github.com/silverpoodle/typora-images/blob/main/strategy.png?raw=true" alt="image-20240218203439687" style="zoom:50%;" />
 
 `객체가 할 수 있는 행위들 각각을 전략으로 만들어 놓고, 동적으로 행위의 수정이 필요한 경우 전략을 바꾸는 것만으로 행위의 수정이 가능하도록 만든 패턴`
 
