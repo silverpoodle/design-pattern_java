@@ -3,9 +3,6 @@ import java.util.List;
 public class Pos implements MenuObserver{
     int postNo;
     boolean isPos;
-    int cardTotal = 0;
-    int cashTotal = 0;
-    int qrTotal = 0;
     int total = 0;
     List<Menu> menus;
 
