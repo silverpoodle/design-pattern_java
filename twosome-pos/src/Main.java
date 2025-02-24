@@ -64,6 +64,8 @@ public class Main {
 
         System.out.println(pos1.getTotal());
 
+        pos1.menuSoldOut(menus.get(0));
+
 
     }
 }

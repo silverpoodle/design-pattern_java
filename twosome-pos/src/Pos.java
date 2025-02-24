@@ -50,6 +50,7 @@ public class Pos implements MenuObserver{
                     m.getSize() == menu.getSize() &&
                     m.getCategory() == menu.getCategory()) {
                 m.isSoldOut = isSoldOut;
+                System.out.println(m.getName() + "SOLD OUT");
             }
         }
     }

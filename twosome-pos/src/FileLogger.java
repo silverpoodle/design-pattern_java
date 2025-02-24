@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class FileLogger {
     private static FileLogger instance;
-    private static final String LOG_FILE = "application.log";
+    private static final String LOG_FILE = "twosome.log";
     private PrintWriter writer;
 
     private FileLogger() {
